@@ -14,6 +14,6 @@
 	<p><%= portfolio_item.subtitle %></p>
 	<p><%= portfolio_item.body %></p>
 	<%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
-	<%= link_to "Edit Item", edit_portfolio_path(portfolio_item.id) %>
-	<a href="/portfolios/<%= portfolio_item.id %>/edit">Edit Again</a>
+<!--	<%= link_to "Edit Item", edit_portfolio_path(portfolio_item.id) %> -->
+	<a href="/portfolios/<%= portfolio_item.id %>/edit">Edit</a>
 <% end %>
