@@ -5,7 +5,10 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
+    #Debugging
+    # puts "*" * 500
     @blogs = Blog.all
+    # puts "*" * 500
     @page_title = "DVP Blogs"
   end
 
