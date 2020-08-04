@@ -57,7 +57,7 @@ class PortfoliosController < ApplicationController
 
 	    # Redirect
 	    respond_to do |format|
-	      format.html { redirect_to portfolios_url, notice: 'Record Removed!.' }
+	      format.html { redirect_to portfolios_url, notice: 'Record Removed!' }
     end
   end
 
