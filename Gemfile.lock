@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/jake-duchesne/devportfolio_view_tool
+  revision: e8921eb9ce79348738bd07e234ce87da44dc63e4
+  specs:
+    devportfolio_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -213,6 +219,7 @@ DEPENDENCIES
   bootstrap (~> 4.5.0)
   byebug
   devise (~> 4.7, >= 4.7.2)
+  devportfolio_view_tool!
   friendly_id (~> 5.2.4)
   jbuilder (~> 2.7)
   jquery-rails
