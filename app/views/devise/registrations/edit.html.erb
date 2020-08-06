@@ -1,10 +1,9 @@
 <div class="card">
   <div class="card-body">
-
+    <div class="text-center"><h2>Edit <%= resource_name.to_s.humanize %></h2></div>
     <div class="d-flex p-2 mx-auto">
       <div class="p-2">
-        <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+        
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -41,23 +40,25 @@
         <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control"%>
       </div>
 
-      <div class="actions">
-        <%= f.submit "Update", class: "btn btn-primary" %>
-      </div>
-      <% end %>
+        <div class="d-flex p-2 justify-content-between">
+          <div class="actions text-center"><%= f.submit "Update", class: "btn btn-primary" %></div>
+          
+          <div class="text-center"><%= link_to "Back", :back, class: "btn btn-outline-info" %></div>
+        </div>
+        <% end %>
       </div>
 
-      <div class="p-2 align-self-center">
+      <div class="card-body2 p-2 align-self-center">
           <h3>Cancel Account</h3>
 
-          <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+          <p>Unhappy? <%= button_to "Cancel My Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
 
       </div>
 
     </div> 
 
     
-
-    <%= link_to "Back", :back, class: "btn btn-outline-info" %>
+    
+      
     </div>
 </div>
