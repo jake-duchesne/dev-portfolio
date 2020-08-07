@@ -122,3 +122,30 @@ body {
   text-shadow: none;
 }
 
+// .auth-links a{
+//   @extend .btn;
+//   @extend .btn-primary;
+//   text-shadow: none;
+
+//   &--block a{
+//   @extend .auth-links;
+//   @extend .btn-block;
+//   }
+// }
+
+// .auth-links-block a{
+//   @extend .btn;
+//   @extend .btn-primary;
+//   @extend .btn-block;
+// }
+
+.auth-links{
+  a{
+    @extend .btn;
+    @extend .btn-primary;
+    text-shadow: none;
+  }
+  &--block a{
+    @extend .btn-block;
+  }
+}
