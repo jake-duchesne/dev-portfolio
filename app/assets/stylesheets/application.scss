@@ -145,7 +145,7 @@ body {
     @extend .btn-primary;
     text-shadow: none;
   }
-  &--block a{
+  &.block a{
     @extend .btn-block;
   }
 }
