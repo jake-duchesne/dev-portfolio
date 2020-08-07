@@ -115,11 +115,10 @@ body {
   color:black;
   text-align: left;
  }
-.card-body2 {
-  color:black;
-  text-align: center;
- }
-// .auth-links a {
-//   color:black;
-// }
+
+.btn-back a{
+  @extend .btn;
+  @extend .btn-outline-info;
+  text-shadow: none;
+}
 
