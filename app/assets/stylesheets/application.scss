@@ -149,3 +149,21 @@ body {
     @extend .btn-block;
   }
 }
+
+.auth-links-norm {
+  a{
+    color:black;
+  }
+}
+
+.login > .card {
+  width: 50%;
+  margin: auto;
+  float: none;
+}
+
+.btn-secondary-default {
+  color: white !important;
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+}
