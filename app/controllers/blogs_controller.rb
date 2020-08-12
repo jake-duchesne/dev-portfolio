@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   def index
     #Debugging
     # puts "*" * 500
-    @blogs = Blog.all
+    @blogs = Blog.page(params[:page]).per(5)
     # puts "*" * 500
     @page_title = "DVP Blogs"
   end

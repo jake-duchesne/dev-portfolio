@@ -8,6 +8,8 @@
   </div>
 </div>
 
+<!-- @blog.last is only showing per page last because upon pagination @blogs is instantiated with only those hit on the database within the constraint, calling Blog.last.title would fix this but would also become a database query. This can be fixed by creating a scope or an attribute of featured -->
+
 <div class="col-md-8 blog-main">
   <h3 class="pb-4 mb-4 font-italic border-bottom">
     From the Firehose
@@ -15,12 +17,11 @@
   <%= link_to "Create New Blog", new_blog_path if logged_in?(:site_admin) %>
   <hr>
 
+  <%= paginate @blogs %>
+
   <%= render @blogs %>
 
-  <nav class="blog-pagination">
-    <a class="btn btn-outline-primary" href="#">Older</a>
-    <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-  </nav>
+  <%= paginate @blogs %>
 </div>
 
 <p id="notice"><%= notice %></p>
