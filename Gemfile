@@ -54,3 +54,5 @@ gem 'devportfolio_view_tool', git: 'https://github.com/jake-duchesne/devportfoli
 gem 'petergate', '~> 2.0', '>= 2.0.1' 
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
+gem 'solargraph', group: :development
+gem 'rubocop', group: :development
