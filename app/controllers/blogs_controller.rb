@@ -12,7 +12,7 @@ class BlogsController < ApplicationController
     # puts "*" * 500
     @blogs = Blog.page(params[:page]).per(5)
     # puts "*" * 500
-    @page_title = "DVP Blogs"
+    @page_title = "Developer Blogs"
   end
 
   # GET /blogs/1

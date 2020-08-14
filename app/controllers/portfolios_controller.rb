@@ -6,10 +6,12 @@ class PortfoliosController < ApplicationController
           	site_admin: :all
 
 	def index
-		@portfolio_items = Portfolio.all
+		# @portfolio_items = Portfolio.all
+		@portfolio_items = Portfolio.by_position
 		# @portfolio_items = Portfolio.where(subtitle: "Angular")
 		# @portfolio_items = Portfolio.angular
 		# @portfolio_items = Portfolio.ruby_on_rails
+		@page_title = "Developer Portfolios"
 	end
 
 	def angular
