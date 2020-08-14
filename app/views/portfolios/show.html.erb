@@ -1,13 +1,21 @@
-<%= image_tag @portfolio_item.main_image %>
+<div class="container">
+    <div class="d-flex flex-row">
+        <div class="p-2 flex-fill">
+            <%= image_tag @portfolio_item.main_image %>
+        </div>
+        <div class="pl-4 flex-fill">
+            <h1><%= @portfolio_item.title %></h1>
+            <hr>
+            <em><%= @portfolio_item.subtitle %></em>
+            <p><%= @portfolio_item.body%></p>
+            <hr>
 
-<h1><%= @portfolio_item.title %></h1>
+            <h3>Technologies</h3>
 
-<em><%= @portfolio_item.subtitle %></em>
+            <% @portfolio_item.technologies.each do |t| %>
+            <p> <%= t.name %> </p>
+            <% end %>
 
-<p><%= @portfolio_item.body%></p>
-
-<h2>Technologies</h2>
-
-<% @portfolio_item.technologies.each do |t| %>
-<p> <%= t.name %> </p>
-<% end %>
+        </div>
+    </div>
+</div>

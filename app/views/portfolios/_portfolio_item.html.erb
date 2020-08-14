@@ -1,20 +1,24 @@
-<div class="col-md-4">
-  <div class="card mb-4 shadow-sm">
-    <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
-    <div class="card-body">
-      <p class="card-text">
-      	<span>
-      		<%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %>
-      		
-      	</span>
-      		<%= portfolio_item.subtitle %>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+<div class="col-md-4 mb-2">
+    <div class="card mb-4 shadow-sm h-100">
+        <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
+        <div class="card-body">
+            <span>
+
+            </span>
+            <%= portfolio_item.subtitle %>
+            <p class="card-text">
+
+                <span>
+                    <%= portfolio_item.body.truncate_words(15, seperator: ' ') %>
+
+                </span>
         </div>
-        <small class="text-muted">9 mins</small>
-      </div>
+        <div class="d-flex justify-content-between align-items-center p-2">
+            <div class="btn-group">
+                <%= link_to portfolio_item.title.titleize.tr(':', ''), portfolio_show_path(portfolio_item), class: "btn btn-sm btn-outline-primary" %>
+                <%= link_to 'Edit', edit_portfolio_path(portfolio_item), class: "btn btn-sm btn-outline-secondary" if logged_in?(:site_admin) %>
+            </div>
+            <span class="text-muted"><%= distance_of_time_in_words(portfolio_item.created_at, Time.now) %> ago</span>
+        </div>
     </div>
-  </div>
 </div>
