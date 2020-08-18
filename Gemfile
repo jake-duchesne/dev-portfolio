@@ -56,3 +56,4 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
 gem 'solargraph', group: :development
 gem 'rubocop', group: :development
+gem "stimulus_reflex", "~> 3.2"

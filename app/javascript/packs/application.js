@@ -30,3 +30,4 @@ document.addEventListener('turbolinks:load', () => {
         dragClass: "sortable-dragged"
     });
 })
+import "controllers"
