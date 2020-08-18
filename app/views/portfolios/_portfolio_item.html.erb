@@ -2,15 +2,13 @@
     <div class="card mb-4 shadow-sm h-100">
         <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
         <div class="card-body">
-            <span>
 
+            <span>
             </span>
             <%= portfolio_item.subtitle %>
             <p class="card-text">
-
                 <span>
                     <%= portfolio_item.body.truncate_words(15, seperator: ' ') %>
-
                 </span>
         </div>
         <div class="d-flex justify-content-between align-items-center p-2">
@@ -18,6 +16,9 @@
                 <%= link_to portfolio_item.title.titleize.tr(':', ''), portfolio_show_path(portfolio_item), class: "btn btn-sm btn-outline-primary" %>
                 <%= link_to 'Edit', edit_portfolio_path(portfolio_item), class: "btn btn-sm btn-outline-secondary" if logged_in?(:site_admin) %>
             </div>
+            <% if logged_in?(:site_admin) %>
+            <%= fa_icon "th-large" %>
+            <% end %>
             <span class="text-muted"><%= distance_of_time_in_words(portfolio_item.created_at, Time.now) %> ago</span>
         </div>
     </div>

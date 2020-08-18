@@ -45,3 +45,17 @@ footer p {
 .portfolio-form {
   padding: 2rem;
 }
+
+#sortable-items {
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  };
+  .sortable-ghost {
+    background-color: skyblue;
+    
+  };
+  .sortable-dragged {
+    background-color: skyblue;
+  }
+}
