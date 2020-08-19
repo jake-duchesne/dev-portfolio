@@ -1,7 +1,7 @@
 <div class="album py-5 bg-light">
     <div class="container">
         <div class="row" data-controller="tasks">
-            <div class="row task-item" id="<%= "sortable-items" if logged_in?(:site_admin) %>" data-action="<%= "drop->tasks#sort" if logged_in?(:site_admin) %>" data-task-id="<%= "task.id" %>">
+            <div class="row task-item" id="<%= "sortable-items" if logged_in?(:site_admin) %>">
                 <%= render partial: 'portfolio_item', collection: @portfolio_items %>
             </div>
         </div>
