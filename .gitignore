@@ -37,5 +37,6 @@ yarn-debug.log*
 
 # Don't show my secrets
 /config/credentials.yml.enc
+.env
 
 ThingsToDo.txt
