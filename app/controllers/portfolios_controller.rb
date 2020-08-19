@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-	before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
+	before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy, :move]
 	layout 'portfolio'
 	access  all: [:show, :index, :angular], 
           	user: {except: [:destroy, :new, :create, :update, :edit]}, 
@@ -57,6 +57,11 @@ class PortfoliosController < ApplicationController
 	    respond_to do |format|
 	      format.html { redirect_to portfolios_url, notice: 'Record Removed!' }
     end
+  end
+
+  def move
+	@portfolio_item.insert_at(params[:position].to_i)
+	head :ok
   end
 
   private

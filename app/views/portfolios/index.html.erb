@@ -1,9 +1,9 @@
 <div class="album py-5 bg-light">
-  	<div class="container">
+    <div class="container">
 
-    	<div class="row">
-<!--     		<%=	link_to "Create New Item", new_portfolio_path if logged_in?(:site_admin) %> -->
-    		<%= render partial: 'portfolio_item', collection: @portfolio_items %>
-    	</div>
-  	</div>
+        <div class="row" id="<%= "draggable" if logged_in?(:site_admin) %>" data-controller="<%= "drag" if logged_in?(:site_admin) %>" data-drag-url="/portfolios/:id/move">
+            <%= render partial: 'portfolio_item', collection: @portfolio_items %>
+            <% @portfolio_items.order(position: :asc) %>
+        </div>
+    </div>
 </div>

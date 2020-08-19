@@ -45,3 +45,16 @@ footer p {
 .portfolio-form {
   padding: 2rem;
 }
+
+#draggable {
+  cursor: grab;
+  &:after {
+    cursor: grabbing;
+  }
+  .ghost-class {
+    background-color: skyblue;
+  }
+  .drag-class {
+    background-color: skyblue;
+  }
+}
