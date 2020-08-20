@@ -61,7 +61,6 @@ class PortfoliosController < ApplicationController
 
   def move
 	@portfolio_item.insert_at(params[:position].to_i)
-	head :ok
   end
 
   private

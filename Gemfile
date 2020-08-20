@@ -49,6 +49,7 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
+gem 'acts_as_list', '~> 1.0', '>= 1.0.1'
 
 gem 'devportfolio_view_tool', git: 'https://github.com/jake-duchesne/devportfolio_view_tool'
 gem 'petergate', '~> 2.0', '>= 2.0.1' 
@@ -56,7 +57,6 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
 gem 'solargraph', group: :development
 gem 'rubocop', group: :development
-gem "acts_as_list", "~> 1.0"
 gem 'carrierwave', '~> 2.1'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'carrierwave-aws', '~> 1.5'
