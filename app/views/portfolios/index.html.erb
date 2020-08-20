@@ -7,8 +7,12 @@
 <%
 =end%>
         <div class="row" id="draggable" data-controller="drag" data-drag-url="/portfolios/:id/move">
-            <%= render partial: 'portfolio_item', collection: @portfolio_items %>
-            <% @portfolio_items.order(position: :asc) %>
+            <%= render partial: 'portfolio_item', collection: @portfolio_items, order: :position %>
+            <%
+=begin%>
+ <% @portfolio_items.order(id: :asc) %> 
+<%
+=end%>
         </div>
     </div>
 </div>

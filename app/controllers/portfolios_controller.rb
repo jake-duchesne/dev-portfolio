@@ -60,6 +60,7 @@ class PortfoliosController < ApplicationController
   end
 
   def move
+	byebug
 	@portfolio_item.insert_at(params[:position].to_i)
   end
 
