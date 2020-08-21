@@ -1,7 +1,7 @@
 <div class="container portfolio-form">
     <div class="d-flex flex-row">
         <div class="p-2 flex-fill">
-            <%= image_tag portfolio_img(@portfolio_item.main_image.url, 'main') %>
+            <%= image_tag portfolio_img(@portfolio_item.main_image.main_v.url, 'main') %>
         </div>
         <div class="pl-4 flex-fill">
             <h1><%= @portfolio_item.title %></h1>
