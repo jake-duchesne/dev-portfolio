@@ -48,7 +48,7 @@ end
 gem 'friendly_id', '~> 5.2.4'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'bootstrap', '~> 4.5.0'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.4'
 
 gem 'devportfolio_view_tool', git: 'https://github.com/jake-duchesne/devportfolio_view_tool'
 gem 'petergate', '~> 2.0', '>= 2.0.1' 
