@@ -10,12 +10,19 @@
             <p><%= @portfolio_item.body%></p>
             <hr>
 
-            <h3>Technologies</h3>
+            <% if @portfolio_item.technologies.exists? %>
 
-            <% @portfolio_item.technologies.each do |t| %>
-            <p> <%= t.name %> </p>
+                <h3>Technologies</h3>
+                <% @portfolio_item.technologies.each do |t| %>
+                <p> <%= t.name %> </p>
+                <% end %>
             <% end %>
 
+            <% if logged_in?(:site_admin) %>
+            <div class="text-center">
+                <%= link_to "Edit Portfolio", edit_portfolio_path(@portfolio_item), class: 'btn btn-warning' %>
+            </div>
+            <% end %>
         </div>
     </div>
 </div>
