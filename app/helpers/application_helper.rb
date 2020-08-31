@@ -67,6 +67,22 @@ module ApplicationHelper
     "active" if current_page? path
   end
 
+  def alerts
+    alert = (flash[:alert] || flash[:error] || flash[:notice])
+
+    if alert
+      alertgen alert, "custom_gritter_blog"
+    end
+  end
+
+  def alertgen msg, src
+    js add_gritter(msg, title: "Notification", sticky: false, time: 4000, :class_name => src)
+  end
+
+
+
+
+
 
 
 end

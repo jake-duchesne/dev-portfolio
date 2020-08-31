@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,19 +13,21 @@
 
     <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="container">
-      <%= render 'shared/blog_masthead' %>
-      <%= render 'shared/blog_nav' %>
-      <div class="row">
-        <%= yield %>
-        <%= render 'shared/blog_sidebar' %>
-      </div>
+        <%= render 'shared/blog_masthead' %>
+        <%= render 'shared/blog_nav' %>
+        <div class="row">
+            <%= yield %>
+            <%= render 'shared/blog_sidebar' %>
+        </div>
 
-      <%= render 'shared/blog_footer' %>
-      <%= source_helper("blog") %>
+        <%= render 'shared/blog_footer' %>
+        <%= alerts %>
+        <%= source_helper("blog") %>
     </div>
-  </body>
+</body>
+
 </html>
