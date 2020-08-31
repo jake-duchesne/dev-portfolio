@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "font-awesome";
+@import "gritter";
 
 .jumbotron {
   padding-top: 3rem;
@@ -58,3 +59,12 @@ footer p {
     background-color: skyblue;
   }
 }
+
+.custom_gritter_portfolio {
+  background-color: black;
+  border-color: grey;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid white;
+}
+

@@ -1,35 +1,29 @@
 <%= form_with(model: blog, local: true) do |form| %>
   <% if blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
-
-      <ul>
-        <% blog.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+    <% blog.errors.full_messages.each do |error| %>
+      <%= js add_gritter(error, title: "Creation Error!", sticky: false, time: 4000, :class_name => "custom_gritter_blog") %>
   <% end %>
+<% end %>
 
-  <div class="form-group">
+<div class="form-group">
     <%
 =begin%>
- <%= form.label :title %> 
-<%
+    <%= form.label :title %>
+    <%
 =end%>
     <%= form.text_field :title, class: "form-control", placeholder: :title %>
-  </div>
+</div>
 
-  <div class="form-group">
+<div class="form-group">
     <%
 =begin%>
- <%= form.label :body %> 
-<%
+    <%= form.label :body %>
+    <%
 =end%>
     <%= form.text_area :body, class: "form-control", rows: 15, placeholder: :body %>
-  </div>
+</div>
 
-  <div class="form-group">
+<div class="form-group">
     <%= form.submit "Submit", class: "btn btn-primary" %>
-  </div>
+</div>
 <% end %>

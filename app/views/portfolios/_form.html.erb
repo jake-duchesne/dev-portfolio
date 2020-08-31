@@ -1,4 +1,11 @@
-<%= form_with(model: @portfolio_item, local: true) do |form| %>
+<%= form_with(model: portfolio_item, local: true) do |form| %>
+    
+    <% if portfolio_item.errors.any? %>
+    <%# This doesn't work right now - add_gritter issue %>
+        <%= portfolio_item.errors.full_messages.each do |error| %>
+            <%= js add_gritter(error, title: "Creation Error!", sticky: false, time: 4000, :class_name => "custom_gritter_portfolio") %>
+        <% end %>
+    <% end %>
 
 <div class="form-row">
     <div class="form-group col-md-6">
