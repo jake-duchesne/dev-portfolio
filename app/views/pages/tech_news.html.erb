@@ -1,0 +1,13 @@
+<main role="main" class="inner cover">
+    <h1 class="cover-heading mb-4">Rails News</h1>
+    <div class="d-flex flex-row flex-wrap">
+            <% @tweets.each do |tweet| %>
+            <div class="card-deck tech-news p-2 col-md-6">
+                <div class="card h-100">
+                    <%= tweet %>
+                </div>
+            </div>
+            <% end %>
+    </div>
+
+</main>
