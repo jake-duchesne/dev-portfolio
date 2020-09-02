@@ -42,7 +42,7 @@ body {
 }
 
 .cover-container {
-  max-width: 55em;
+  max-width: 65em;
 }
 
 
@@ -247,5 +247,16 @@ body {
 
 .gritter-item-wrapper .gritter-close:focus {
     outline: none
+}
+
+.tech-news {
+  color: black;
+  a{
+    color: blue;
+    text-shadow: none;
+  }
+  >.card{
+    padding: 25px;
+  }
 }
 
