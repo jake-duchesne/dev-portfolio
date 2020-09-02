@@ -1,26 +1,15 @@
 <div class="col-md-8 blog-main">
-	<h2><%= @blog.title %></h2>
+    <h2><%= @blog.title %></h2>
 
-	<%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %> 
+    <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
 
-	<p><%= @blog.body %></p>
-	<%= link_to 'Back', blogs_path %>
+    <p><%= @blog.body %></p>
 
-	<% unless current_user.is_a? GuestUser %>
 
-		<%= form_for @comment, url: '#' do |form| %>
-			<div class="form-group">
-				<%= form.label :content %>
-				<%= form.text_area :content, class: 'form-control' %>
-			</div>
-			<%= form.submit 'Post Comment', class: 'btn btn-primary' %>
-		<% end %>
+    <%= render 'comments/comment_form' %>
+    <%= render @blog.comments %>
 
-	<% end %>
-
-	<%= render @blog.comments %>
+    <%= link_to 'Back', blogs_path %>
 
 
 </div>
-
-
