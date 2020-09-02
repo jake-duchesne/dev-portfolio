@@ -78,3 +78,6 @@ gem 'gritter', '~> 1.2'
 
 # Social tool
 gem 'twitter', '~> 7.0'
+
+# Redis
+gem 'redis', '~> 4.2', '>= 4.2.1'
