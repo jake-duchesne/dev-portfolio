@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
 	devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
 	  
 	resources :portfolios, except: [:show]
@@ -10,6 +11,9 @@ Rails.application.routes.draw do
 	end
 	
 	resources :blogs do
+		collection do
+			post '/:blog_id/comments' => 'comments#create', as: :create_comment
+		end
 		member do
 			get :toggle_status
 		end
