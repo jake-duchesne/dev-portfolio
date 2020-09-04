@@ -1,7 +1,11 @@
 <div class="col-md-8 blog-main">
     <h2><%= @blog.title %></h2>
 
-    <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
+    <strong class="float-right"><%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %></strong>
+
+    <p>
+        <%= @blog.topic.title %>
+    </p>
 
     <p><%= @blog.body %></p>
 
@@ -10,10 +14,10 @@
     <%= render @blog.comments %>
 
     <div class="d-flex justify-content-between p-2">
-            <%= link_to 'Back', blogs_path %>
-            <p class="float-right">
-                <a href="#">Beam me up!</a>
-            </p>
+        <%= link_to 'Back', blogs_path %>
+        <p class="float-right">
+            <a href="#">Beam me up!</a>
+        </p>
     </div>
 
 

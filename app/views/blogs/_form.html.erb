@@ -1,12 +1,21 @@
 <%= form_with(model: blog, local: true) do |form| %>
-  <% if blog.errors.any? %>
-    <% blog.errors.full_messages.each do |error| %>
-       <%= alertgen error, "custom_gritter_blog" %>
-  <% end %>
+<% if blog.errors.any? %>
+<% blog.errors.full_messages.each do |error| %>
+<%= alertgen error, "custom_gritter_blog" %>
+<% end %>
 <% end %>
 
 <div class="form-group">
     <%= form.text_field :title, class: "form-control", placeholder: :title %>
+</div>
+
+<div class="form-group">
+    <%= form.label :topic_id %>
+    <%= form.collection_select(:topic_id, Topic.all, :id, :title,
+                                                              {
+                                                                selected: blog.topic.id,
+                                                                include_blank: true
+                                                              }, class: 'form-control') %>
 </div>
 
 <div class="form-group">
