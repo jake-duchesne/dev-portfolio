@@ -1,17 +1,29 @@
 <aside class="col-md-4 blog-sidebar">
-  <div class="p-4 mb-3 bg-light rounded">
-    <h4 class="font-italic">About</h4>
-    <p class="mb-0">Do you want to know what's going on in my life? <em>Probably not</em> but that's why this is my website and not yours.</p>
-  </div>
+    <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="font-italic">About</h4>
+        <p class="mb-0">Do you want to know what's going on in my life? <em>Probably not</em> but that's why this is my website and not yours.</p>
+    </div>
 
-  <div class="p-4 social-box">
-    <h4 class="font-italic">Find Me Elsewhere!</h4>
-    <ol class="list-unstyled social-links">
-      <li><a href="https://github.com/jake-duchesne"><%= fa_icon "github" %></a></li>
-      <li class="social-links"><a href="https://linkedin.com/in/jake-duchesne"><%= fa_icon "linkedin" %></a></li>
-      <li><a href="https://www.instagram.com/ohc_nada/"><%= fa_icon "instagram" %></a></li>
-      <li><a href="https://twitter.com/ohc_nada"><%= fa_icon "twitter" %></a></li>
+    <div class="p-4 mb-3 social-box bg-light rounded">
+        <h4 class="font-italic">Find Me Elsewhere!</h4>
+        <ol class="list-unstyled social-links">
+            <li><a href="https://github.com/jake-duchesne"><%= fa_icon "github" %></a></li>
+            <li class="social-links"><a href="https://linkedin.com/in/jake-duchesne"><%= fa_icon "linkedin" %></a></li>
+            <li><a href="https://www.instagram.com/ohc_nada/"><%= fa_icon "instagram" %></a></li>
+            <li><a href="https://twitter.com/ohc_nada"><%= fa_icon "twitter" %></a></li>
 
-    </ol>
-  </div>
+        </ol>
+    </div>
+
+    <div class="p-4 mb-3 bg-light rounded">
+
+        <h4>Topics</h4>
+        <hr>
+
+        <% @side_bar_topics.each do |topic| %>
+        <p><%= link_to topic.title, topic_path(topic) %></p>
+        <% end %>
+
+
+    </div>
 </aside>
