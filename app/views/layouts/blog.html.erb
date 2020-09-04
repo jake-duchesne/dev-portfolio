@@ -17,16 +17,16 @@
 
 <body>
     <div class="container">
-        <%= render 'shared/blog_masthead' %>
-        <%= render 'shared/blog_nav' %>
-        <div class="row">
-            <%= yield %>
-            <%= render 'shared/blog_sidebar' %>
-        </div>
+            <%= render 'shared/blog_masthead' %>
+            <%= render 'shared/blog_nav' %>
+            <div class="row">
+                <%= yield %>
+                <%= render 'shared/blog_sidebar' %>
+            </div>
 
-        <%= render 'shared/blog_footer' %>
-        <%= alerts %>
-        <%= source_helper("blog") %>
+            <%= render 'shared/blog_footer' %>
+            <%= alerts %>
+            <%= source_helper("blog") %>
     </div>
 </body>
 

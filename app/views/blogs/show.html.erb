@@ -9,7 +9,13 @@
     <%= render 'comments/comment_form' %>
     <%= render @blog.comments %>
 
-    <%= link_to 'Back', blogs_path %>
+    <div class="d-flex justify-content-between p-2">
+            <%= link_to 'Back', blogs_path %>
+            <p class="float-right">
+                <a href="#">Beam me up!</a>
+            </p>
+    </div>
+
 
 
 </div>

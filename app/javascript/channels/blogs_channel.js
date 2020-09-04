@@ -14,6 +14,7 @@ consumer.subscriptions.create("BlogsChannel", {
   },
 
   received(data) {
+    console.log('data received', data)
     return comments.append(data(['comment']));
   },
 
