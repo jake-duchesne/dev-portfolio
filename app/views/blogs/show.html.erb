@@ -7,7 +7,7 @@
         <%= @blog.topic.title %>
     </p>
 
-    <p><%= @blog.body %></p>
+    <p><%= markdown @blog.body %></p>
 
 
     <%= render 'comments/comment_form' %>
@@ -20,6 +20,10 @@
         </p>
     </div>
 
-
-
 </div>
+
+<script>
+    $(window).on("load", function() {
+        connectChannel( <%= @blog.id %> )
+    });
+</script>

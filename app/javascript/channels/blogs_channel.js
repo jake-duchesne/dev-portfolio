@@ -1,31 +1,36 @@
 import consumer from "./consumer"
+import { Callbacks } from "jquery";
 
-let comments;
-comments = $('#comments');
+console.log("whatever");
 
-consumer.subscriptions.create("BlogsChannel", {
+function connectChannel(blog_id) {
+  let comments = $('#comments');
 
-  connected() {
-    console.log("Connected to the room!");
-  },
+  consumer.subscriptions.create({
+    channel: "BlogsChannel",
+    blog_id: blog_id,
+    
 
-  disconnected() {
-    console.log("Disconnected from the room!");
-  },
+    connected() {
+      console.log("Connected to the room!");
+    },
+    disconnected() {
+      console.log("Disconnected from the room!");
+    },
+    received(data) {
+      console.log('data received', data)
+      return comments.append(data(['comment']));
+    },
+    send_comment(comment, blog_id) {
+      return this.perform('send_comment', {
+        comment: comment,
+        blog_id: blog_id
+      })
+    },
+  });
+}
 
-  received(data) {
-    console.log('data received', data)
-    return comments.append(data(['comment']));
-  },
-
-  send_comment(comment, blog_id) {
-    return this.perform('send_comment', {
-      comment: comment,
-      blog_id: blog_id
-    })
-  }
-
-});
+console.log("hello")
 
 // Clear textarea
 let submit_messages;

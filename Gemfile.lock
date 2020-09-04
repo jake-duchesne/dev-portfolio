@@ -253,6 +253,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redcarpet (3.5.0)
     redis (4.2.1)
     regexp_parser (1.7.1)
     responders (3.0.1)
@@ -362,6 +363,7 @@ DEPENDENCIES
   carrierwave (~> 2.1)
   carrierwave-aws (~> 1.5)
   cocoon (~> 1.2, >= 1.2.14)
+  coderay (~> 1.1, >= 1.1.3)
   devise (~> 4.7, >= 4.7.2)
   devportfolio_view_tool!
   dotenv-rails (~> 2.7, >= 2.7.6)
@@ -378,6 +380,7 @@ DEPENDENCIES
   pry-byebug
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
+  redcarpet (~> 3.5)
   redis (~> 4.2, >= 4.2.1)
   rubocop
   sass-rails (>= 6)

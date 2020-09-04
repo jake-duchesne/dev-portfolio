@@ -81,3 +81,7 @@ gem 'twitter', '~> 7.0'
 
 # Redis
 gem 'redis', '~> 4.2', '>= 4.2.1'
+
+# Markdown
+gem 'redcarpet', '~> 3.5'
+gem 'coderay', '~> 1.1', '>= 1.1.3'
