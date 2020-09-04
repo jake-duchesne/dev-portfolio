@@ -1,50 +1,45 @@
-import consumer from "./consumer"
-import { Callbacks } from "jquery";
+import consumer from "./consumer";
 
-console.log("whatever");
+const App = {
+  global_chat: undefined,
+};
 
-function connectChannel(blog_id) {
-  let comments = $('#comments');
+$(document).on("turbolinks:load", function () {
+  let comments = $("#comments");
 
-  consumer.subscriptions.create({
-    channel: "BlogsChannel",
-    blog_id: blog_id,
-    
+  if (comments.length > 0) {
+    App.global_chat = consumer.subscriptions.create(
+      { channel: "BlogsChannel", blog_id: comments.data("blog-id") },
+      {
+        connected() {
+          // Called when the subscription is ready for use on the server
+        },
 
-    connected() {
-      console.log("Connected to the room!");
-    },
-    disconnected() {
-      console.log("Disconnected from the room!");
-    },
-    received(data) {
-      console.log('data received', data)
-      return comments.append(data(['comment']));
-    },
-    send_comment(comment, blog_id) {
-      return this.perform('send_comment', {
-        comment: comment,
-        blog_id: blog_id
-      })
-    },
-  });
-}
+        disconnected() {
+          // Called when the subscription has been terminated by the server
+        },
 
-console.log("hello")
+        received(data) {
+          // Called when there's incoming data on the websocket for this channel
+          comments.append(data["comment"]);
+        },
 
-// Clear textarea
-let submit_messages;
+        send_comment(comment, blog_id) {
+          console.log(blog_id);
+          this.perform("send_comment", { comment: comment, blog_id: blog_id });
+        },
+      }
+    );
+  }
 
-$(document).on('turbolinks:load', function () {
-  submit_messages()
-})
-
-submit_messages = function () {
-  $('#new_comment').on('keydown', function (event) {
-    if (event.keyCode == 13) {
-      $('input').click()
-      event.target.value = ''
-      event.preventDefault()
+  $("#new_comment").submit((e) => {
+    let $this = $(this);
+    let textarea = $this.find("#comment_content");
+    if ($.trim(textarea.val()).length > 1) {
+      App.global_chat.send_comment(textarea.val(), comments.data("blog-id"));
+      textarea.val("");
     }
-  })
-}
+    e.preventDefault();
+    return false;
+  });
+});

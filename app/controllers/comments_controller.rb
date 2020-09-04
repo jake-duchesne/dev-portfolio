@@ -1,18 +1,31 @@
 class CommentsController < ApplicationController
-    def create
-        @comment = current_user.comments.build(comment_params)
-        @comment.blog_id = params[:blog_id]
-        if @comment.save
-        #
-        else
-        puts ">>>>>>>>>>>>#{@comment.errors.full_messages.join(',')}" 
-        end
+  before_action :set_comment, only: [:destroy]
+  access user: [:new, :create], site_admin: :allS
+  
+  def new
+    @comment = Comment.new
+  end
+  
+  def create
+    @comment = Comment.create(comment_params)
+    if @comment.save
+      ActionCable.server.broadcast "blogs_channel",
+                                    content: @comment.content
     end
-    
+  end
 
-    private
+  def destroy
+    @comment.destroy
+    redirect_to request.referrer || root_url
+  end
+  
+  private
 
-    def comment_params
-        params.require(:comment).permit(:content)
-    end
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
+  def comment_params
+    params.require(:comment).permit(:content)
+  end
 end

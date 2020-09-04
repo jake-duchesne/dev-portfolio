@@ -13,9 +13,9 @@ Rails.application.routes.draw do
 	end
 	
 	resources :blogs do
-		collection do
-			post '/:blog_id/comments' => 'comments#create', as: :create_comment
-		end
+		# collection do
+		# 	post '/:blog_id/comments' => 'comments#create', as: :create_comment
+		# end
 		member do
 			get :toggle_status
 		end
