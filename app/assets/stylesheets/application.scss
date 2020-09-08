@@ -260,3 +260,14 @@ body {
   }
 }
 
+.app-card-container{
+  color: black;
+  text-align: left;
+  >.card {
+    padding: 40px;
+  }
+  a{
+    color: blue;
+  }
+
+}
