@@ -9,7 +9,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <meta name="keywords" content="<%= @seo_keywords %>" />
+    <meta name="keywords" content="<%= @seo_keywords %>">
+
+    <%= favicon_link_tag 'favicons/favicon.ico' %>
 
     <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -17,15 +19,15 @@
 
 <body>
     <div class="container">
-            <%= render 'shared/blog_masthead' %>
-            <%= render 'shared/blog_nav' %>
-            <div class="row">
-                <%= yield %>
-                <%= render 'shared/blog_sidebar' %>
-            </div>
+        <%= render 'shared/blog_masthead' %>
+        <%= render 'shared/blog_nav' %>
+        <div class="row">
+            <%= yield %>
+            <%= render 'shared/blog_sidebar' %>
+        </div>
 
-            <%= render 'shared/blog_footer' %>
-            <%= alerts %>
+        <%= render 'shared/blog_footer' %>
+        <%= alerts %>
     </div>
 </body>
 
