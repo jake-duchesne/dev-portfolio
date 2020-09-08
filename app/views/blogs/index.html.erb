@@ -17,9 +17,6 @@
     <span>
         <%= link_to "Create New Blog", new_blog_path if logged_in?(:site_admin) %>
     </span>
-    <span class="float-right">
-        <%= link_to "Topics", topics_path %>
-    </span>
     <hr>
 
     <%= paginate @blogs %>

@@ -17,7 +17,7 @@
 
     <div class="p-4 mb-3 bg-light rounded">
 
-        <h4>Topics</h4>
+        <h4><%= link_to "Topics", topics_path, class: '' %></h4>
         <hr>
 
         <% @side_bar_topics.each do |topic| %>
