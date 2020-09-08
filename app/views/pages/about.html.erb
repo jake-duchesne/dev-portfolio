@@ -1,12 +1,10 @@
 <div class="app-card-container">
     <div class="card">
-        <h1>About Me</h1>
+        <h1 class="pl-2">About Me</h1>
 
         <div class="d-flex flex-row">
             <div class="p-2 profile-img">
-
                 <%= image_tag "ProfileNew.jpg", width: 300, alt: "profile-headshot" %>
-
             </div>
 
             <div class="p-2">
@@ -14,7 +12,39 @@
             </div>
         </div>
 
+        <p>
+            <button class="btn btn-info ml-2" type="button" data-toggle="collapse" data-target="#jobHistory" aria-expanded="false" aria-controls="jobHistory">
+                Job History
+            </button>
+        </p>
+        <p>
+            <button class="btn btn-info ml-2" type="button" data-toggle="collapse" data-target="#eduHistory" aria-expanded="false" aria-controls="eduHistory">
+                Education History
+            </button>
+        </p>
+
+        <div class="collapse" id="jobHistory">
+            <h3>Previous Positions</h3>
+            <div class="card card-block">
+                <span>Employer: Nikola Motor</span>
+                <span>Position: Software Engineering Apprentice</span>
+            </div>
+            <div class="card card-block">
+                <span>Employer: Byton</span>
+                <span>Position: ADAS/AD Verification & Validation Engineer</span>
+            </div>
+            <div class="card card-block">
+                <span>Employer: Byton</span>
+                <span>Position: ADAS/AD Intern</span>
+            </div>
+        </div>
+
+        <div class="collapse" id="eduHistory">
+            <div class="card card-block">
+                Arizona State University - Computational Statistics, BS
+            </div>
+        </div>
+
 
     </div>
-
 </div>
