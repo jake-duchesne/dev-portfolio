@@ -2,6 +2,32 @@
 @import "font-awesome";
 @import "gritter";
 
+@font-face {
+  font-family: 'Bebas Neue';
+  src:font-url('BebasNeue-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:font-url('Montserrat-Regular.ttf');
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: 'Bebas Neue', cursive;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  // background-color: #333;
+}
+
 .jumbotron {
   padding-top: 3rem;
   padding-bottom: 3rem;
