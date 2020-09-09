@@ -10,6 +10,7 @@ require("jquery")
 require("turbolinks").start();
 require("@rails/ujs").start();
 require("gritter/js/jquery.gritter.js");
+require("bootstrap-sprockets");
 
 import "controllers";
 import "cocoon";
