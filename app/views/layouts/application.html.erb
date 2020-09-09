@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="<%= @seo_keywords %>" />
+    <meta name="keywords" content="<%= @seo_keywords %>">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap" rel="stylesheet">
+
+    <%= favicon_link_tag 'favicons/favicon.ico' %>
 
     <title><%=@page_title%></title>
 
@@ -12,12 +17,12 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body class="text-center">
+<body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-      <%= video_tag(
+        <%= video_tag(
         'background.mp4',
         id: 'background-cover',
         autoplay: 'true',
@@ -26,15 +31,20 @@
         poster: 'background-still.png'
       ) %>
 
-      <%= render "shared/application_nav" %>
+        <%= render "shared/application_nav" %>
 
-      <%= yield %>
+        <%= yield %>
 
-      <%= render "shared/application_footer" %>
+        <%= render "shared/application_footer" %>
 
-      <%= alerts %>
+        <%= alerts %>
 
-      <%= source_helper("application") %> 
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
     </div>
-  </body>
+</body>
+
 </html>

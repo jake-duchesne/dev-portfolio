@@ -1,5 +1,6 @@
 <div class="album py-5 bg-light">
     <div class="container">
+        <%= source_helper("alert alert-info") %>
 
         <div class="row" id="<%= "draggable" if logged_in?(:site_admin) %>" data-controller="<%= "drag" if logged_in?(:site_admin) %>" data-drag-url="/portfolios/:id/move">
             <%= render partial: 'portfolio_item', collection: @portfolio_items %>
