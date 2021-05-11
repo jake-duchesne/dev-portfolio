@@ -9,7 +9,7 @@
     "cocoon": "github:nathanvda/cocoon#c24ba53",
     "gritter": "^1.7.4",
     "jquery": "^3.5.1",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "node-forge": "^0.10.0",
     "serialize-javascript": "^4.0.0",
     "sortablejs": "^1.12.0",
